@@ -1,0 +1,13 @@
+{
+  "name": "circular-treeshake-repro",
+  "type": "module",
+  "scripts": {
+    "build:rolldown": "rolldown -c rolldown.config.js",
+    "build:rollup": "rollup -c rollup.config.js",
+    "build": "npm run build:rolldown && npm run build:rollup"
+  },
+  "devDependencies": {
+    "rolldown":"^1.0.0-beta.57",
+    "rollup":"^4.54.0"
+  }
+}
