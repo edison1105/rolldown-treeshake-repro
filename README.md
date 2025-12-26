@@ -10,5 +10,5 @@ Rolldown fails to tree-shake unused circular dependency chains.
 pnpm install
 pnpm build
 ```
-see dist/rolldown/index.js and dist/rollup/index.js for differences
+see dist/rolldown.js and dist/rollup.js for differences
 
