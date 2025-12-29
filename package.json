@@ -1,13 +1,11 @@
 {
-  "name": "circular-treeshake-repro",
+  "name": "rolldown-unused-runtime-repro",
+  "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build:rolldown": "rolldown -c rolldown.config.js",
-    "build:rollup": "rollup -c rollup.config.js",
-    "build": "npm run build:rolldown && npm run build:rollup"
+    "build": "rolldown -c rolldown.config.js"
   },
   "devDependencies": {
-    "rolldown":"^1.0.0-beta.57",
-    "rollup":"^4.54.0"
+    "rolldown": "latest"
   }
 }

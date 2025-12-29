@@ -1,12 +1,12 @@
 import { defineConfig } from 'rolldown'
 
 export default defineConfig({
-  input: 'src/index.js',
+  input: 'src/index.ts',
   output: {
-    file: 'dist/rolldown.js',
-    format: 'esm',
-    minify: 'dce-only',
+    file: 'dist/bundle.js',
+    format: 'es',
   },
+  external: ['./external1', './external2'],
   treeshake: {
     moduleSideEffects: false,
   },
