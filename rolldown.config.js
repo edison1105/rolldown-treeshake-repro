@@ -5,14 +5,9 @@ export default defineConfig({
   output: {
     file: 'dist/rolldown.js',
     format: 'es',
+    minify: 'dce-only'
   },
   treeshake: {
     moduleSideEffects: false,
-  },
-  transform: {
-    define: {
-      __FEATURE_A__: 'true',
-      __FEATURE_B__: 'false',
-    },
-  },
+  }
 })

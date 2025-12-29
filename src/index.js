@@ -1,6 +1,1 @@
-import { initFeatureFlags } from './featureFlags'
-
-export function createApp() {
-  initFeatureFlags()
-  return { mount() {} }
-}
+export { main } from './lib.js'
