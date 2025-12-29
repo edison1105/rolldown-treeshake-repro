@@ -1,1 +1,5 @@
-export { main } from './lib.js'
+import { child } from './lib.js'
+
+export function main() {
+  return child()
+}

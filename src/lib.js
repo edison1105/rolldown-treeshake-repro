@@ -1,24 +1,40 @@
-let flag = false
 
-function unused(n) {
-  if (!n) return null
-  return unused(n - 1)
+/*@__NO_SIDE_EFFECTS__*/
+function _child(node) {
+  return node.firstChild
+}
+const _txt = _child
+
+/*@__NO_SIDE_EFFECTS__*/
+function _nthChild(node, i) {
+  return node.childNodes[i]
 }
 
-function caller(node) {
-  unused(node)
+/*@__NO_SIDE_EFFECTS__*/
+function _next(node) {
+  return node.nextSibling
 }
 
-export class Foo {
-  init() {
-    flag = false
-  }
+/*@__NO_SIDE_EFFECTS__*/
+export const txt = (...args) => {
+  return txt.impl(...args)
 }
+txt.impl = _txt
 
-let anchor
-
-export function main() {
-  if (flag && anchor !== void 0) {
-    caller(anchor)
-  }
+/*@__NO_SIDE_EFFECTS__*/
+export const child = (...args) => {
+  return child.impl(...args)
 }
+child.impl = _child
+
+/*@__NO_SIDE_EFFECTS__*/
+export const next = (...args) => {
+  return next.impl(...args)
+}
+next.impl = _next
+
+/*@__NO_SIDE_EFFECTS__*/
+export const nthChild = (...args) => {
+  return nthChild.impl(...args)
+}
+nthChild.impl = _nthChild
