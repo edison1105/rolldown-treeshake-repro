@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "rolldown -c rolldown.config.js"
+    "build": "rolldown -c rolldown.config.js && rollup -c rollup.config.js"
   },
   "devDependencies": {
-    "rolldown": "latest"
+    "@rollup/plugin-replace": "^6.0.3",
+    "rolldown": "latest",
+    "rollup": "^4.54.0"
   }
 }

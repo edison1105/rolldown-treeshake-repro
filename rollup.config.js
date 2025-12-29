@@ -1,18 +1,20 @@
-import { defineConfig } from 'rolldown'
+import { defineConfig } from 'rollup'
+import replace from '@rollup/plugin-replace'
 
 export default defineConfig({
   input: 'src/index.js',
   output: {
-    file: 'dist/rolldown.js',
+    file: 'dist/rollup.js',
     format: 'es',
   },
   treeshake: {
     moduleSideEffects: false,
   },
-  transform: {
-    define: {
+  plugins: [
+    replace({
+      preventAssignment: true,
       __FEATURE_A__: 'true',
       __FEATURE_B__: 'false',
-    },
-  },
+    }),
+  ],
 })
